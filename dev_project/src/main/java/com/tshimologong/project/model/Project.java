@@ -17,9 +17,9 @@ import javax.persistence.Table;
 public class Project {
 
     @Id
-    private int project_id;
-    private String project_name;
-    private String project_due_date;
+    private int id;
+    private String name;
+    private String date;
 
 
 }

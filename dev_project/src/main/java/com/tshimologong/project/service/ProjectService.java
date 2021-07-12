@@ -12,9 +12,9 @@ public class ProjectService {
     ProjectRepository projectRepository;
 
     public Project updateProject(Project project){
-        Project existingProject = projectRepository.findById(project.getProject_id()).orElse(null);
-        existingProject.setProject_name(project.getProject_name());
-        existingProject.setProject_due_date(project.getProject_due_date());
+        Project existingProject = projectRepository.findById(project.getId()).orElse(null);
+        existingProject.setName(project.getName());
+        existingProject.setDate(project.getDate());
         return projectRepository.save(existingProject);
     }
 
