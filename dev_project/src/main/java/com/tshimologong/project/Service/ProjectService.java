@@ -31,4 +31,15 @@ public class ProjectService {
 		return repo.findProjectById(id);
 	}
 
+    public Project updateProject(Project project) {
+		Project existingProject = repo.findById(project.getId()).orElse(null);
+		existingProject.setName(project.getName());
+		existingProject.setDueDate(project.getDueDate());
+		return repo.save(existingProject);
+    }
+
+	public String deleteProject(long id) {
+		repo.deleteById(id);
+		return "Project Deleted Successfully.";
+	}
 }
